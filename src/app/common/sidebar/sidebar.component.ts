@@ -14,6 +14,7 @@ export class SidebarComponent implements OnInit {
 
   closeNavBar(){
    document.getElementById('navbarcollapse').click()
+   document.getElementById('navbarcollapse2').click()
   }
 
 }

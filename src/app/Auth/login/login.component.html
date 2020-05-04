@@ -7,22 +7,36 @@
             <span aria-hidden="true">&times;</span>
           </button>
             </div>
-            <div class="modal-body mat-app-background basic-container">
-                <form class="example-form">
-                    <mat-form-field class="example-full-width">
-                        <mat-label>Favorite food</mat-label>
-                        <input matInput placeholder="Ex. Pizza">
+            <div class="modal-body">
+                <form class="material-form" [formGroup]="loginForm" (ngSubmit)="submit()">
+                    <mat-form-field class="material-full-width">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email" placeholder="Ex. pat@example.com">
+                        <mat-hint>Errors appear instantly!</mat-hint>
+                        <mat-error *ngIf="loginForm.controls.email.hasError('email') && !loginForm.controls.email.hasError('required')">
+                            Please enter a valid email address
+                        </mat-error>
+                        <mat-error *ngIf="loginForm.controls.email.hasError('required')">
+                            Email is <strong>required</strong>
+                        </mat-error>
                     </mat-form-field>
 
-                    <mat-form-field class="example-full-width">
-                        <mat-label>Leave a comment</mat-label>
-                        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+                    <mat-form-field class="material-full-width">
+                        <mat-label>Password</mat-label>
+                        <input matInput formControlName="password" placeholder="*********" />
+                        <mat-hint>Errors appear instantly!</mat-hint>
+                        <mat-error *ngIf="(loginForm.controls.password.hasError('pattern') || loginForm.controls.password.hasError('minlength') ) && !loginForm.controls.password.hasError('required')">
+                            Password requires 8 or more characters and must include a number, capital letter and a special character(!,$ etc.).
+                        </mat-error>
+                        <mat-error *ngIf="loginForm.controls.password.hasError('required')">
+                            Password is <strong>required</strong>
+                        </mat-error>
                     </mat-form-field>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" #closeLogin class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" (click)="submit()" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>

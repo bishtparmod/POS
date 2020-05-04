@@ -11,11 +11,10 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(window.location)
     if(window.location.pathname === '/'){
-      this.header= false
+      this.header= true
     }else{
-      this.header=true
+      this.header=false
     }
   }
 

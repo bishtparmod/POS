@@ -1,0 +1,309 @@
+<mat-tab-group class="mt-5">
+    <mat-tab label="Category">
+        <div class="content">
+            <div class="page-inner">
+                <button type="button" class="btn btn primary btn-style" data-toggle="modal" data-target="#categoryModal">Add Product</button>
+                <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="onPageChange($event)">
+                </mat-paginator>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card card-post card-round">
+                            <img class="card-img-top" src="../assets/img/blogpost.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="avatar">
+                                        <img src="../assets/img/profile2.jpg" alt="..." class="avatar-img rounded-circle">
+                                    </div>
+                                    <div class="info-post ml-2">
+                                        <p class="username">Joko Subianto</p>
+                                        <p class="date text-muted">20 Jan 18</p>
+                                    </div>
+                                </div>
+                                <div class="separator-solid"></div>
+                                <p class="card-category text-info mb-1"><a href="#">Design</a></p>
+                                <h3 class="card-title">
+                                    <a href="#">
+                                        Best Design Resources This Week
+                                    </a>
+                                </h3>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary btn-rounded btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-rounded btn-sm ml-2">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-post card-round">
+                            <img class="card-img-top" src="../assets/img/blogpost.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="avatar">
+                                        <img src="../assets/img/profile2.jpg" alt="..." class="avatar-img rounded-circle">
+                                    </div>
+                                    <div class="info-post ml-2">
+                                        <p class="username">Joko Subianto</p>
+                                        <p class="date text-muted">20 Jan 18</p>
+                                    </div>
+                                </div>
+                                <div class="separator-solid"></div>
+                                <p class="card-category text-info mb-1"><a href="#">Design</a></p>
+                                <h3 class="card-title">
+                                    <a href="#">
+                                        Best Design Resources This Week
+                                    </a>
+                                </h3>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary btn-rounded btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-rounded btn-sm ml-2">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-post card-round">
+                            <img class="card-img-top" src="../assets/img/blogpost.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="avatar">
+                                        <img src="../assets/img/profile2.jpg" alt="..." class="avatar-img rounded-circle">
+                                    </div>
+                                    <div class="info-post ml-2">
+                                        <p class="username">Joko Subianto</p>
+                                        <p class="date text-muted">20 Jan 18</p>
+                                    </div>
+                                </div>
+                                <div class="separator-solid"></div>
+                                <p class="card-category text-info mb-1"><a href="#">Design</a></p>
+                                <h3 class="card-title">
+                                    <a href="#">
+                                        Best Design Resources This Week
+                                    </a>
+                                </h3>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary btn-rounded btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-rounded btn-sm ml-2">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-post card-round">
+                            <img class="card-img-top" src="../assets/img/blogpost.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="avatar">
+                                        <img src="../assets/img/profile2.jpg" alt="..." class="avatar-img rounded-circle">
+                                    </div>
+                                    <div class="info-post ml-2">
+                                        <p class="username">Joko Subianto</p>
+                                        <p class="date text-muted">20 Jan 18</p>
+                                    </div>
+                                </div>
+                                <div class="separator-solid"></div>
+                                <p class="card-category text-info mb-1"><a href="#">Design</a></p>
+                                <h3 class="card-title">
+                                    <a href="#">
+                                        Best Design Resources This Week
+                                    </a>
+                                </h3>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary btn-rounded btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-rounded btn-sm ml-2">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Subcategory">
+        <div class="content">
+            <div class="page-inner">
+                <button type="button" class="btn btn primary btn-style" data-toggle="modal" data-target="#subcategoryModal">Add Product</button>
+                <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="onPageChange($event)">
+                </mat-paginator>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card card-post card-round">
+                            <img class="card-img-top" src="../assets/img/blogpost.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="avatar">
+                                        <img src="../assets/img/profile2.jpg" alt="..." class="avatar-img rounded-circle">
+                                    </div>
+                                    <div class="info-post ml-2">
+                                        <p class="username">Joko Subianto</p>
+                                        <p class="date text-muted">20 Jan 18</p>
+                                    </div>
+                                </div>
+                                <div class="separator-solid"></div>
+                                <p class="card-category text-info mb-1"><a href="#">Design</a></p>
+                                <h3 class="card-title">
+                                    <a href="#">
+                                        Best Design Resources This Week
+                                    </a>
+                                </h3>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary btn-rounded btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-rounded btn-sm ml-2">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-post card-round">
+                            <img class="card-img-top" src="../assets/img/blogpost.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="avatar">
+                                        <img src="../assets/img/profile2.jpg" alt="..." class="avatar-img rounded-circle">
+                                    </div>
+                                    <div class="info-post ml-2">
+                                        <p class="username">Joko Subianto</p>
+                                        <p class="date text-muted">20 Jan 18</p>
+                                    </div>
+                                </div>
+                                <div class="separator-solid"></div>
+                                <p class="card-category text-info mb-1"><a href="#">Design</a></p>
+                                <h3 class="card-title">
+                                    <a href="#">
+                                        Best Design Resources This Week
+                                    </a>
+                                </h3>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary btn-rounded btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-rounded btn-sm ml-2">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-post card-round">
+                            <img class="card-img-top" src="../assets/img/blogpost.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="avatar">
+                                        <img src="../assets/img/profile2.jpg" alt="..." class="avatar-img rounded-circle">
+                                    </div>
+                                    <div class="info-post ml-2">
+                                        <p class="username">Joko Subianto</p>
+                                        <p class="date text-muted">20 Jan 18</p>
+                                    </div>
+                                </div>
+                                <div class="separator-solid"></div>
+                                <p class="card-category text-info mb-1"><a href="#">Design</a></p>
+                                <h3 class="card-title">
+                                    <a href="#">
+                                        Best Design Resources This Week
+                                    </a>
+                                </h3>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary btn-rounded btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-rounded btn-sm ml-2">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-post card-round">
+                            <img class="card-img-top" src="../assets/img/blogpost.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="avatar">
+                                        <img src="../assets/img/profile2.jpg" alt="..." class="avatar-img rounded-circle">
+                                    </div>
+                                    <div class="info-post ml-2">
+                                        <p class="username">Joko Subianto</p>
+                                        <p class="date text-muted">20 Jan 18</p>
+                                    </div>
+                                </div>
+                                <div class="separator-solid"></div>
+                                <p class="card-category text-info mb-1"><a href="#">Design</a></p>
+                                <h3 class="card-title">
+                                    <a href="#">
+                                        Best Design Resources This Week
+                                    </a>
+                                </h3>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary btn-rounded btn-sm">Edit</a>
+                                <a href="#" class="btn btn-danger btn-rounded btn-sm ml-2">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+</mat-tab-group>
+
+<!-- Category Modal -->
+<div class="modal fade" id="categoryModal" #categoryModal tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Category Form</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body">
+                <form class="material-form" [formGroup]="categoryForm" (ngSubmit)="submit()">
+                    <mat-form-field class="material-full-width">
+                        <mat-label>Category Name</mat-label>
+                        <input matInput formControlName="categoryName" placeholder="Category Name">
+                        <mat-hint>Errors appear instantly!</mat-hint>
+                        <mat-error *ngIf="categoryForm.controls.categoryName.hasError('pattern') && !categoryForm.controls.categoryName.hasError('required')">
+                            Please enter a valid category
+                        </mat-error>
+                        <mat-error *ngIf="categoryForm.controls.categoryName.hasError('required')">
+                            Category name is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" #closeLogin class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" (click)="submit()" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Subcategory Modal -->
+<div class="modal fade" id="subcategoryModal" #subcategoryModal tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Subcategory Form</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body">
+                <form class="material-form" [formGroup]="subcategoryForm">
+                    <mat-form-field class="material-full-width">
+                        <mat-label>Select Category</mat-label>
+                        <mat-select formControlName="categoryList">
+                            <mat-option>Choose option</mat-option>
+                            <mat-option *ngFor="let animal of animals" [value]="animal">
+                                {{animal.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="subcategoryForm.controls.categoryList.hasError('required')">
+                            Category name is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="material-full-width">
+                        <mat-label>Subcategory Name</mat-label>
+                        <input matInput formControlName="subcategoryName" placeholder="Subcategory Name">
+                        <mat-error *ngIf="subcategoryForm.controls.subcategoryName.hasError('pattern') && !subcategoryForm.controls.subcategoryName.hasError('required')">
+                            Please enter a valid subcategory
+                        </mat-error>
+                        <mat-error *ngIf="subcategoryForm.controls.subcategoryName.hasError('required')">
+                            Subcategory name is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" #closeLogin class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

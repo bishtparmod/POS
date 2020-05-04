@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: "order", loadChildren: "./order/order.module#OrderModule"  },
   { path: "offer", loadChildren: "./offer/offer.module#OfferModule"  },
   { path: "chat", loadChildren: "./chat/chat.module#ChatModule"  },
+  { path: "category", loadChildren: "./category/category.module#CategoryModule"  },
   // { path: "**", redirectTo: "", pathMatch: "full" }
 ];
 

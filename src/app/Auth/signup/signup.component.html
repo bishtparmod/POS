@@ -3,17 +3,62 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Signup Form</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
             </div>
             <div class="modal-body">
-                ...
+                <form class="material-form" [formGroup]="signupForm" (ngSubmit)="submit()">
+                    <mat-form-field class="material-full-width">
+                        <mat-label>Username</mat-label>
+                        <input matInput formControlName="username" placeholder="Jim Perry">
+                        <mat-hint>Jim Perry</mat-hint>
+                        <mat-error *ngIf="signupForm.controls.username.hasError('pattern') && !signupForm.controls.username.hasError('required')">
+                            Invalid name
+                        </mat-error>
+                        <mat-error *ngIf="signupForm.controls.username.hasError('required')">
+                            Username is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="material-full-width">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email" placeholder="Ex. pat@example.com">
+                        <mat-hint>Ex. pat@example.com!</mat-hint>
+                        <mat-error *ngIf="signupForm.controls.email.hasError('email') && !signupForm.controls.email.hasError('required')">
+                            Please enter a valid email address
+                        </mat-error>
+                        <mat-error *ngIf="signupForm.controls.email.hasError('required')">
+                            Email is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="material-full-width">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput formControlName="password" placeholder="*********" />
+                        <mat-hint>Password requires 8 or more characters and must include a number, capital letter and a special character(!,$ etc.).</mat-hint>
+                        <mat-error *ngIf="(signupForm.controls.password.hasError('pattern') || signupForm.controls.password.hasError('minlength') ) && !signupForm.controls.password.hasError('required')">
+                            Password requires 8 or more characters and must include a number, capital letter and a special character(!,$ etc.).
+                        </mat-error>
+                        <mat-error *ngIf="signupForm.controls.password.hasError('required')">
+                            Password is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="material-full-width mt-2 pt-1">
+                        <mat-label>Confirm Password</mat-label>
+                        <input type="password" matInput formControlName="confirmPassword" placeholder="*********" />
+                        <mat-hint>Password requires 8 or more characters and must include a number, capital letter and a special character(!,$ etc.).</mat-hint>
+                        <mat-error *ngIf="(signupForm.controls.confirmPassword.hasError('passwordMismatch') || signupForm.controls.confirmPassword.hasError('minlength') ) && !signupForm.controls.confirmPassword.hasError('required')">
+                            Password not match.
+                        </mat-error>
+                        <mat-error *ngIf="signupForm.controls.confirmPassword.hasError('required')">
+                            Confirm Password is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" #closeSignup class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" (click)="submit()" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>

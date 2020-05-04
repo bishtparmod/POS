@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,10 +19,16 @@ import { LoginComponent } from './Auth/login/login.component';
 import { SignupComponent } from './Auth/signup/signup.component';
 import { ForgotpasswordComponent } from './Auth/forgotpassword/forgotpassword.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { ToastrModule } from 'ngx-toastr';
 
 // Angular Material Module
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+
+// Service
+import { AuthService } from './Service/interceper/auth.service'
+import { CategoryModule } from './category/category.module';
 
 @NgModule({
   declarations: [
@@ -43,11 +50,17 @@ import { MatInputModule } from '@angular/material/input';
     OfferModule,
     ChatModule,
     ShareModule,
+    CategoryModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
+    ReactiveFormsModule,
+    FormsModule,
+    ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthService, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

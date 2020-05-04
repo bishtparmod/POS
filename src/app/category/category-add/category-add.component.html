@@ -1,0 +1,17 @@
+<div class="content mt-5">
+    <div class="page-inner">
+        <form class="material-form" [formGroup]="categoryForm" (ngSubmit)="submit()">
+            <mat-form-field class="material-full-width">
+                <mat-label>Category Name</mat-label>
+                <input matInput formControlName="categoryName" placeholder="Category Name">
+                <mat-hint>Errors appear instantly!</mat-hint>
+                <mat-error *ngIf="categoryForm.controls.categoryName.hasError('pattern') && !categoryForm.controls.categoryName.hasError('required')">
+                    Please enter a valid category
+                </mat-error>
+                <mat-error *ngIf="categoryForm.controls.categoryName.hasError('required')">
+                    Category name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </form>
+    </div>
+</div>

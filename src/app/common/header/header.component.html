@@ -4,21 +4,19 @@
         <a href="index.html" class="logo">
             <img src="../assets/img/logo.svg" alt="navbar brand" class="navbar-brand">
         </a>
-        <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+        <button id="navbarcollapse2" class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation" *ngIf="!header">
             <span class="navbar-toggler-icon">
                 <i class="icon-menu"></i>
             </span>
         </button>
-        <button class="topbar-toggler more" *ngIf="false"><i class="icon-options-vertical"></i></button>
-        <div class="more" *ngIf="true">
-            <button class="btn signup" data-toggle="modal" data-target="#signupModal">Signup</button>
-            <button type="button" class="btn login" data-toggle="modal" data-target="#loginModal">
-                login
-              </button>
+        <button class="topbar-toggler more" *ngIf="!header"><i class="icon-options-vertical"></i></button>
+        <div class="more" *ngIf="header">
+            <button type="button" class="btn signup" data-toggle="modal" data-target="#signupModal">Signup</button>
+            <button type="button" class="btn login" data-toggle="modal" data-target="#loginModal">login</button>
             <!-- <button class="btn login" data-toggle="modal" data-target="#loginModal">Login</button> -->
         </div>
 
-        <div *ngIf="header" class="nav-toggle">
+        <div *ngIf="!header" class="nav-toggle">
             <button id="navbarcollapse" class="btn btn-toggle sidenav-overlay-toggler">
                 <i class="icon-menu"></i>
             </button>
@@ -30,7 +28,7 @@
     <nav class="navbar navbar-header navbar-expand-lg" data-background-color="dark">
 
         <div class="container-fluid">
-            <div class="collapse" id="search-nav" *ngIf="header">
+            <div class="collapse" id="search-nav" *ngIf="!header">
                 <form class="navbar-left navbar-form nav-search mr-md-3">
                     <div class="input-group">
                         <div class="input-group-prepend">
@@ -42,13 +40,13 @@
                     </div>
                 </form>
             </div>
-            <ul class="navbar-nav topbar-nav ml-md-auto align-items-center" *ngIf="header">
+            <ul class="navbar-nav topbar-nav ml-md-auto align-items-center" *ngIf="!header">
                 <li class="nav-item toggle-nav-search hidden-caret">
                     <a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
                         <i class="fa fa-search"></i>
                     </a>
                 </li>
-                <li class="nav-item dropdown hidden-caret">
+                <li class="nav-item dropdown hiddtrueen-caret">
                     <a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-envelope"></i>
                     </a>
@@ -262,12 +260,10 @@
             </ul>
             <ul class="navbar-nav topbar-nav ml-md-auto align-items-center" *ngIf="header">
                 <li class="nav-item dropdown hidden-caret">
-                    <button class="btn signup">Signup</button>
+                    <button type="button" class="btn signup" data-toggle="modal" data-target="#signupModal">Signup</button>
                 </li>
                 <li class="nav-item dropdown hidden-caret">
-                    <button type="button" class="btn login" data-toggle="modal" data-target="#loginModal">
-                        login
-                      </button>
+                    <button type="button" class="btn login" data-toggle="modal" data-target="#loginModal">login</button>
                     <!-- <button class="btn login">login</button> -->
                 </li>
             </ul>
