@@ -228,7 +228,7 @@ body[data-background-color="dark"] .demo-icon .icon-class {
 	background-color: #1a2035;
 }
 .btnSwitch button[data-color="blue"] {
-	background-color: #1572E8;
+	background-color: #ffa801;
 }
 .btnSwitch button[data-color="purple"] {
 	background-color: #6861CE;
@@ -246,7 +246,7 @@ body[data-background-color="dark"] .demo-icon .icon-class {
 	background-color: #F25961;
 }
 .btnSwitch button[data-color="dark2"] {
-	background-color: #1f283e;
+	background-color: #d2dae2;
 }
 .btnSwitch button[data-color="blue2"] {
 	background-color: #1269DB;

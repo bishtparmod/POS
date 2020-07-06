@@ -1,65 +1,101 @@
-<!-- Modal -->
-<div class="modal fade" id="signupModal" #signupModal tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Signup Form</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-            </div>
-            <div class="modal-body">
-                <form class="material-form" [formGroup]="signupForm" (ngSubmit)="submit()">
-                    <mat-form-field class="material-full-width">
-                        <mat-label>Username</mat-label>
-                        <input matInput formControlName="username" placeholder="Jim Perry">
-                        <mat-hint>Jim Perry</mat-hint>
-                        <mat-error *ngIf="signupForm.controls.username.hasError('pattern') && !signupForm.controls.username.hasError('required')">
-                            Invalid name
-                        </mat-error>
-                        <mat-error *ngIf="signupForm.controls.username.hasError('required')">
-                            Username is <strong>required</strong>
-                        </mat-error>
-                    </mat-form-field>
-                    <mat-form-field class="material-full-width">
-                        <mat-label>Email</mat-label>
-                        <input matInput formControlName="email" placeholder="Ex. pat@example.com">
-                        <mat-hint>Ex. pat@example.com!</mat-hint>
-                        <mat-error *ngIf="signupForm.controls.email.hasError('email') && !signupForm.controls.email.hasError('required')">
-                            Please enter a valid email address
-                        </mat-error>
-                        <mat-error *ngIf="signupForm.controls.email.hasError('required')">
-                            Email is <strong>required</strong>
-                        </mat-error>
-                    </mat-form-field>
-                    <mat-form-field class="material-full-width">
-                        <mat-label>Password</mat-label>
-                        <input type="password" matInput formControlName="password" placeholder="*********" />
-                        <mat-hint>Password requires 8 or more characters and must include a number, capital letter and a special character(!,$ etc.).</mat-hint>
-                        <mat-error *ngIf="(signupForm.controls.password.hasError('pattern') || signupForm.controls.password.hasError('minlength') ) && !signupForm.controls.password.hasError('required')">
-                            Password requires 8 or more characters and must include a number, capital letter and a special character(!,$ etc.).
-                        </mat-error>
-                        <mat-error *ngIf="signupForm.controls.password.hasError('required')">
-                            Password is <strong>required</strong>
-                        </mat-error>
-                    </mat-form-field>
-                    <mat-form-field class="material-full-width mt-2 pt-1">
-                        <mat-label>Confirm Password</mat-label>
-                        <input type="password" matInput formControlName="confirmPassword" placeholder="*********" />
-                        <mat-hint>Password requires 8 or more characters and must include a number, capital letter and a special character(!,$ etc.).</mat-hint>
-                        <mat-error *ngIf="(signupForm.controls.confirmPassword.hasError('passwordMismatch') || signupForm.controls.confirmPassword.hasError('minlength') ) && !signupForm.controls.confirmPassword.hasError('required')">
-                            Password not match.
-                        </mat-error>
-                        <mat-error *ngIf="signupForm.controls.confirmPassword.hasError('required')">
-                            Confirm Password is <strong>required</strong>
-                        </mat-error>
-                    </mat-form-field>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" #closeSignup class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button type="button" (click)="submit()" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
+<!-- <form class="material-form" [formGroup]="signupForm" (ngSubmit)="submit()">
+    <mat-form-field class="material-full-width">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username" placeholder="Jim Perry">
+        <mat-hint>Jim Perry</mat-hint>
+        <mat-error *ngIf="signupForm.controls.username.hasError('pattern') && !signupForm.controls.username.hasError('required')">
+            Invalid name
+        </mat-error>
+        <mat-error *ngIf="signupForm.controls.username.hasError('required')">
+            Username is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="material-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Ex. pat@example.com">
+        <mat-hint>Ex. pat@example.com!</mat-hint>
+        <mat-error *ngIf="signupForm.controls.email.hasError('email') && !signupForm.controls.email.hasError('required')">
+            Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="signupForm.controls.email.hasError('required')">
+            Email is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="material-full-width">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="password" placeholder="*********" />
+        <mat-hint>Password requires 8 or more characters and must include a number, capital letter and a special character(!,$ etc.).</mat-hint>
+        <mat-error *ngIf="(signupForm.controls.password.hasError('pattern') || signupForm.controls.password.hasError('minlength') ) && !signupForm.controls.password.hasError('required')">
+            Password requires 8 or more characters and must include a number, capital letter and a special character(!,$ etc.).
+        </mat-error>
+        <mat-error *ngIf="signupForm.controls.password.hasError('required')">
+            Password is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="material-full-width mt-2 pt-1">
+        <mat-label>Confirm Password</mat-label>
+        <input type="password" matInput formControlName="confirmPassword" placeholder="*********" />
+        <mat-hint>Password requires 8 or more characters and must include a number, capital letter and a special character(!,$ etc.).</mat-hint>
+        <mat-error *ngIf="(signupForm.controls.confirmPassword.hasError('passwordMismatch') || signupForm.controls.confirmPassword.hasError('minlength') ) && !signupForm.controls.confirmPassword.hasError('required')">
+            Password not match.
+        </mat-error>
+        <mat-error *ngIf="signupForm.controls.confirmPassword.hasError('required')">
+            Confirm Password is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+</form> -->
+
+<div class="text-right" (click)="closeDialog()">
+    <i class="far fa-times-circle icon"></i>
 </div>
+
+<div class="text-center m-4" (click)="closeDialog()">
+    <img src="../../../assets/img/logo2.svg" >
+</div>
+<div class="text-center">
+    <p><strong>Welcome to Point of Sale! </strong>
+    <span style="color: #ffa801;">Register now</span></p>
+</div>
+
+<form [formGroup]="signupForm" (ngSubmit)="submit()">
+    <div class="form-group">
+        <input formControlName="username" type="text" class="form-control" [ngStyle]="{'border-color' : !signupForm.controls.username.pristine && signupForm.controls.username.errors ? '#ffa801' : 'blue' }" placeholder="Username">
+        <small class="form-text" *ngIf="!signupForm.controls.username.pristine && signupForm.controls.username.hasError('email') && !signupForm.controls.username.hasError('required')">
+            Invalid Username
+        </small>
+        <small class="form-text" *ngIf="!signupForm.controls.username.pristine && signupForm.controls.username.hasError('required')">
+          Username is required
+        </small>
+      </div>
+    <div class="form-group">
+      <input formControlName="email" type="email" class="form-control" [ngStyle]="{'border-color' : !signupForm.controls.email.pristine && signupForm.controls.email.errors ? '#ffa801' : 'blue' }" placeholder="Enter email">
+      <small class="form-text" *ngIf="!signupForm.controls.email.pristine && signupForm.controls.email.hasError('email') && !signupForm.controls.email.hasError('required')">
+          Please enter valid email address
+      </small>
+      <small class="form-text" *ngIf="!signupForm.controls.email.pristine && signupForm.controls.email.hasError('required')">
+        Email is required
+      </small>
+    </div>
+    <div class="form-group">
+      <input type="password" formControlName="password" class="form-control" [ngStyle]="{'border-color' : !signupForm.controls.password.pristine && signupForm.controls.password.errors ? '#ffa801' : 'blue' }" placeholder="Password">
+      <small class="form-text" *ngIf="!signupForm.controls.password.pristine && (signupForm.controls.password.hasError('pattern') || signupForm.controls.password.hasError('minlength') ) && !signupForm.controls.password.hasError('required')">
+        Password requires 8 or more characters and must include a number, capital letter and a special character(!,$ etc.).
+      </small>
+      <small class="form-text" *ngIf="!signupForm.controls.password.pristine && signupForm.controls.password.hasError('required')">
+        Password is required
+      </small>
+    </div>
+    <div class="form-group">
+        <input type="password" formControlName="confirmPassword" class="form-control" [ngStyle]="{'border-color' : !signupForm.controls.confirmPassword.pristine && signupForm.controls.confirmPassword.errors ? '#ffa801' : 'blue' }" placeholder="Password">
+        <small class="form-text" *ngIf="!signupForm.controls.password.pristine && (signupForm.controls.confirmPassword.hasError('passwordMismatch') || signupForm.controls.confirmPassword.hasError('minlength') ) && !signupForm.controls.confirmPassword.hasError('required')">
+          Password requires 8 or more characters and must include a number, capital letter and a special character(!,$ etc.).
+        </small>
+        <small class="form-text" *ngIf="!signupForm.controls.password.pristine && signupForm.controls.confirmPassword.hasError('required')">
+          Password is required
+        </small>
+    </div>
+    <div class="text-center mt-2">
+        <button type="submit" (click)="submit()" class="btn btn-primary">Submit</button>
+        <h5 class="mt-2">Do you have an account? <span style="color: #ffa801;cursor: pointer;" (click)="openLoginDialog()">Log in!</span> </h5>
+    </div>
+  </form>

@@ -12,6 +12,11 @@ export class ProductListComponent implements OnInit {
   pageSize = 4;
   pageSizeOptions: number[] = [4,8,12,16];
 
+  sliderImage = [
+    {image:"/assets/img/profile2.jpg",class:"active"},
+    {image:"/assets/img/blogpost.jpg",class:"inactive"},
+    {image:"/assets/img/profile2.jpg",class:"inactive"}
+  ]
   // MatPaginator Output
   pageEvent: PageEvent;
   constructor() { }

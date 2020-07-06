@@ -14,6 +14,7 @@ import { OrderModule } from './order/order.module';
 import { OfferModule } from './offer/offer.module';
 import { ChatModule } from './chat/chat.module';
 import { ShareModule } from './share/share.module';
+import { CategoryModule } from './category/category.module';
 import { PaginationComponent } from './share/pagination/pagination.component';
 import { LoginComponent } from './Auth/login/login.component';
 import { SignupComponent } from './Auth/signup/signup.component';
@@ -25,10 +26,9 @@ import { ToastrModule } from 'ngx-toastr';
 // Angular Material Module
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
+import { MatDialogModule } from '@angular/material/dialog';
 // Service
 import { AuthService } from './Service/interceper/auth.service'
-import { CategoryModule } from './category/category.module';
 
 @NgModule({
   declarations: [
@@ -52,12 +52,15 @@ import { CategoryModule } from './category/category.module';
     ShareModule,
     CategoryModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule,
     ReactiveFormsModule,
     FormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
+  entryComponents: [LoginComponent,SignupComponent,ForgotpasswordComponent],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthService, multi: true },
   ],

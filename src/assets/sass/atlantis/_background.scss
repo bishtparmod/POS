@@ -71,7 +71,7 @@ body {
 		}
 		.input-group-text {
 			border-color: #2f374b !important;
-			background-color: #1f283e;
+			background-color: #d2dae2;
 			color: #fff;
 		}
 		.input-solid {
@@ -83,7 +83,7 @@ body {
 		}
 		.footer {
 			border-top: 1px solid #293247;
-			background: #1f283e;
+			background: #d2dae2;
 		}
 		.form-control, .form-group-default, .select2-container--bootstrap .select2-selection {
 			background-color: #1a2035;
@@ -201,7 +201,7 @@ body {
 }
 
 .bg-primary-gradient {
-	@include linear-gradient(-45deg, #06418E, $primary-color);
+	@include linear-gradient(-45deg, #ffdd59, $primary-color);
 }
 
 .bg-secondary-gradient {

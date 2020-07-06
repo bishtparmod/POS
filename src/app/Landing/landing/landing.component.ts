@@ -12,4 +12,10 @@ export class LandingComponent implements OnInit {
   ngOnInit() {
   }
 
+  sliderImage = [
+    {image:"/assets/img/profile2.jpg",class:"active"},
+    {image:"/assets/img/blogpost.jpg",class:"inactive"},
+    {image:"/assets/img/profile2.jpg",class:"inactive"},
+    // {image:"/assets/img/blogpost.jpg"},
+  ]
 }

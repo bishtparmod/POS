@@ -1,0 +1,127 @@
+<div class="content mt-5">
+    <div class="page-inner">
+        <div class="card-body">
+            <div class="avatar avatar-xxl">
+                <img src="/assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle" />
+            </div>
+        </div>
+        <form class="material-form" [formGroup]="offerForm">
+            <mat-form-field class="material-full-width">
+                <mat-label>Discount</mat-label>
+                <input matInput formControlName="discount" placeholder="Discount">
+                <mat-hint>Discount</mat-hint>
+                <mat-error *ngIf="offerForm.controls.discount.hasError('pattern') && !offerForm.controls.discount.hasError('required')">
+                    Maximum 100 and Min 0
+                </mat-error>
+                <mat-error *ngIf="offerForm.controls.discount.hasError('required')">
+                    Discount is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="material-full-width">
+                <mat-label>Select Discount Type</mat-label>
+                <mat-select formControlName="discountType">
+                    <mat-option>Choose option</mat-option>
+                    <mat-option *ngFor="let animal of animals" [value]="animal.name">
+                        {{animal.name}}
+                    </mat-option>
+                </mat-select>
+                <mat-hint>Select Discount Type</mat-hint>
+                <mat-error *ngIf="offerForm.controls.discountType.hasError('required')">
+                    Discount Type is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="material-full-width" *ngIf="offerForm.controls.discountType.value==='Category' || offerForm.controls.discountType.value==='Subcategory' || offerForm.controls.discountType.value==='Product'">
+                <mat-label>Select Category</mat-label>
+                <mat-select formControlName="category">
+                    <mat-option>Choose option</mat-option>
+                    <mat-option *ngFor="let animal of animals" [value]="animal">
+                        {{animal.name}}
+                    </mat-option>
+                </mat-select>
+                <mat-hint>Select Category</mat-hint>
+                <mat-error *ngIf="offerForm.controls.category.hasError('required')">
+                    Category is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="material-full-width" *ngIf="offerForm.controls.discountType.value==='Subcategory' || offerForm.controls.discountType.value==='Product'">
+                <mat-label>Select Subcategory</mat-label>
+                <mat-select formControlName="subcategory">
+                    <mat-option>Choose option</mat-option>
+                    <mat-option *ngFor="let animal of animals" [value]="animal">
+                        {{animal.name}}
+                    </mat-option>
+                </mat-select>
+                <mat-hint>Select Subcategory</mat-hint>
+                <mat-error *ngIf="offerForm.controls.subcategory.hasError('required')">
+                    Subcategory is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="material-full-width">
+                <mat-label>Select Size</mat-label>
+                <mat-select formControlName="size">
+                    <mat-option>Choose option</mat-option>
+                    <mat-option *ngFor="let data of size" [value]="data">
+                        {{data.name}}
+                    </mat-option>
+                </mat-select>
+                <mat-hint>Select Size</mat-hint>
+                <mat-error *ngIf="offerForm.controls.size.hasError('required')">
+                    Size is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="material-full-width">
+                <mat-label>Select Gender</mat-label>
+                <mat-select formControlName="gender">
+                    <mat-option>Choose option</mat-option>
+                    <mat-option *ngFor="let data of gender" [value]="data">
+                        {{data.name}}
+                    </mat-option>
+                </mat-select>
+                <mat-hint>Select Gender</mat-hint>
+                <mat-error *ngIf="offerForm.controls.gender.hasError('required')">
+                    Gender is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="material-full-width">
+                <mat-label>Select Slug</mat-label>
+                <mat-select formControlName="slug">
+                    <mat-option>Choose option</mat-option>
+                    <mat-option *ngFor="let data of slug" [value]="data">
+                        {{data.name}}
+                    </mat-option>
+                </mat-select>
+                <mat-hint>Select Slug</mat-hint>
+                <mat-error *ngIf="offerForm.controls.slug.hasError('required')">
+                    Slug is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="material-full-width">
+                <mat-label>Quantity</mat-label>
+                <input matInput formControlName="quantity" placeholder="Quantity">
+                <mat-hint>Quantity</mat-hint>
+                <mat-error *ngIf="offerForm.controls.quantity.hasError('pattern') && !offerForm.controls.quantity.hasError('required')">
+                    Invalid quantity
+                </mat-error>
+                <mat-error *ngIf="offerForm.controls.quantity.hasError('required')">
+                    Quantity is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="material-full-width">
+                <mat-label>Chest</mat-label>
+                <input type="text" matInput formControlName="chest" placeholder="Chest" />
+                <mat-hint>Chest</mat-hint>
+                <mat-error *ngIf="offerForm.controls.chest.hasError('required')">
+                    Chest is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="material-full-width">
+                <mat-label>Waist</mat-label>
+                <input type="text" matInput formControlName="waist" placeholder="Waist" />
+                <mat-hint>Waist</mat-hint>
+                <mat-error *ngIf="offerForm.controls.waist.hasError('required')">
+                    Waist is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </form>
+    </div>
+</div>
